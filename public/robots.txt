@@ -1,0 +1,8 @@
+# AI Label Tool
+# https://devv-shayan.github.io/ai-label-tool/
+
+User-agent: *
+Allow: /
+
+# Search and AI discovery crawlers are welcome.
+Sitemap: https://devv-shayan.github.io/ai-label-tool/sitemap.xml

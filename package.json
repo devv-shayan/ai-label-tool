@@ -1,0 +1,15 @@
+{
+  "name": "ai-label-tool",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Remove C2PA-style AI labels from MP4 and MOV videos locally in the browser.",
+  "homepage": "https://devv-shayan.github.io/ai-label-tool/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devv-shayan/ai-label-tool.git"
+  },
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs"
+  }
+}

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <style>
+    :root {
+      --accent: #c6f24e;
+      --muted: #b4b4b4;
+      --line: #2a2a2a;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      width: 1200px;
+      height: 630px;
+      margin: 0;
+      overflow: hidden;
+      background: #000000;
+      color: #ffffff;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      position: relative;
+      padding: 54px 64px 48px;
+      background:
+        radial-gradient(circle at 88% 8%, rgba(198, 242, 78, 0.12), transparent 32%),
+        radial-gradient(circle at 8% 92%, rgba(198, 242, 78, 0.05), transparent 28%),
+        #000000;
+    }
+
+    .grid {
+      position: absolute;
+      inset: 0;
+      opacity: 0.34;
+      background-image: radial-gradient(#242424 1px, transparent 1px);
+      background-size: 26px 26px;
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent 72%);
+    }
+
+    .frame {
+      position: absolute;
+      inset: 22px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      pointer-events: none;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .brand img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .eyebrow {
+      margin-top: 58px;
+      color: var(--accent);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 970px;
+      margin: 16px 0 0;
+      font-size: 70px;
+      line-height: 1.02;
+      font-weight: 600;
+      letter-spacing: -0.045em;
+    }
+
+    h1 span { color: var(--accent); }
+
+    .sub {
+      max-width: 790px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: 25px;
+      line-height: 1.35;
+      letter-spacing: -0.015em;
+    }
+
+    .bottom {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-top: auto;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    .points {
+      display: flex;
+      gap: 26px;
+      color: var(--muted);
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .points span::before {
+      content: "";
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      margin-right: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+      vertical-align: 1px;
+    }
+
+    .url {
+      color: #ffffff;
+      font-size: 17px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="frame"></div>
+  <div class="content">
+    <div class="brand">
+      <img src="../public/favicon.svg" alt="">
+      <span>AI Label Tool</span>
+    </div>
+
+    <div class="eyebrow">C2PA metadata remover</div>
+    <h1>Remove the <span>AI label</span><br>from your video.</h1>
+    <p class="sub">Works on MP4 and MOV. Runs in your browser. No upload, no account, no watermark.</p>
+
+    <div class="bottom">
+      <div class="points">
+        <span>Free</span>
+        <span>Private</span>
+        <span>Local processing</span>
+      </div>
+      <div class="url">devv-shayan.github.io/ai-label-tool</div>
+    </div>
+  </div>
+</body>
+</html>
