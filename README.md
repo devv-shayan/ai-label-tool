@@ -1,6 +1,6 @@
 # AI Label Tool
 
-The app has a single page: choose an MP4 or MOV, then add or remove its AI provenance label and download a copy. It runs entirely in the browser. Removal strips the top-level `uuid` boxes that carry the label; addition appends a C2PA-style `uuid` box with an unsigned AI-generated marker. The video and audio streams are copied byte-for-byte; nothing is uploaded and the file never leaves your computer.
+The app is a single-page tool: choose an MP4 or MOV, then add or remove its AI provenance label and download a copy. It runs entirely in the browser. Removal strips the top-level `uuid` boxes that carry the label; addition appends a C2PA-style `uuid` box with an unsigned AI-generated marker. The video and audio streams are copied byte-for-byte; nothing is uploaded and the file never leaves your computer.
 
 ## Live site
 
@@ -10,11 +10,13 @@ The site is deployed from `public/` by the GitHub Actions workflow in `.github/w
 
 ## SEO notes
 
-- `public/index.html` contains the search title and description, canonical URL, robots meta tag, Open Graph and Twitter cards, `SoftwareApplication`/`WebSite`/`FAQPage` JSON-LD, and the crawlable guide and FAQ content.
-- `public/sitemap.xml` lists the canonical page for Google Search Console.
-- `public/robots.txt` allows crawling and points to the sitemap. GitHub Pages serves it under the project path; the page's `index, follow` meta tag is the primary indexation control.
+- `public/index.html` contains the search title and description, canonical URL, robots meta tag, Open Graph and Twitter cards, `WebSite`/`WebPage`/`Person`/`SoftwareApplication`/`FAQPage` JSON-LD, and the crawlable guide and FAQ content. The author section names Shayan Khan and links to GitHub.
+- `public/privacy.html` and `public/terms.html` are plain-language trust pages. They are linked from the footer and listed in the sitemap.
+- `public/legal.css` is the shared stylesheet for the privacy and terms pages.
+- `public/sitemap.xml` lists the home, privacy, and terms pages for Google Search Console.
+- `public/robots.txt` allows crawling, names AI search and training crawlers, and points to the sitemap. GitHub Pages serves it under the project path; the page's `index, follow` meta tag is the primary indexation control. The root `https://devv-shayan.github.io/robots.txt` is outside this repository.
 - `public/og-image.png` and the favicon files are the social and search icons.
-- If the site moves to a custom domain, replace `https://devv-shayan.github.io/ai-label-tool/` in `public/index.html`, `public/sitemap.xml`, and `public/robots.txt`, then update the repository's GitHub Pages custom domain setting.
+- If the site moves to a custom domain, replace `https://devv-shayan.github.io/ai-label-tool/` in `public/index.html`, `public/privacy.html`, `public/terms.html`, `public/sitemap.xml`, and `public/robots.txt`, then update the repository's GitHub Pages custom domain setting.
 
 To make Google discover the page, verify the URL-prefix property in [Google Search Console](https://search.google.com/search-console/) and submit `https://devv-shayan.github.io/ai-label-tool/sitemap.xml`. Search Console verification is the one step that needs the site owner's account.
 
