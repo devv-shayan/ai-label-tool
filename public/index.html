@@ -532,6 +532,46 @@
             object-fit: contain;
         }
 
+        .result-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .result-actions .download {
+            flex: 1;
+            margin-top: 0;
+        }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            min-height: 52px;
+            padding: 0 18px;
+            background: #141414;
+            color: var(--text);
+            border: 1px solid var(--line-light);
+            border-radius: 999px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background 0.15s ease, border-color 0.15s ease;
+        }
+
+        .share-btn:hover {
+            background: #202020;
+            border-color: #383838;
+        }
+
+        .share-btn svg {
+            width: 16px;
+            height: 16px;
+            display: block;
+        }
+
         .download { margin-top: 18px; }
 
         .another {
@@ -923,7 +963,16 @@
                     <p id="result-line">Your video is ready. The tool removed the AI label from this copy.</p>
                     <p class="result-note" id="result-note" hidden>The tool removed the AI label from the file. It did not remove visible watermarks or labels added by a platform.</p>
                     <video class="preview" id="preview" controls playsinline preload="metadata" aria-label="Preview of your video"></video>
-                    <a class="btn primary download" id="download-link" href="#" download aria-describedby="result-title result-line result-note">Download video</a>
+                    <div class="result-actions">
+                        <a class="btn primary download" id="download-link" href="#" download aria-describedby="result-title result-line result-note">Download video</a>
+                        <button class="share-btn" id="share-btn" type="button" aria-label="Copy tool link to share">
+                            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                            </svg>
+                            <span id="share-btn-text">Share tool</span>
+                        </button>
+                    </div>
 
                     <div class="star-callout">
                         <div class="star-callout-header">
@@ -1504,6 +1553,26 @@
         anotherBtn.addEventListener('click', () => {
             if (!busy && !checking) videoInput.click();
         });
+
+        const shareBtn = document.getElementById('share-btn');
+        const shareBtnText = document.getElementById('share-btn-text');
+        if (shareBtn) {
+            shareBtn.addEventListener('click', async () => {
+                const url = 'https://devv-shayan.github.io/ai-label-tool/';
+                try {
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        await navigator.clipboard.writeText(url);
+                        shareBtnText.textContent = 'Copied! ✓';
+                        setTimeout(() => { shareBtnText.textContent = 'Share tool'; }, 2200);
+                    } else if (navigator.share) {
+                        await navigator.share({ title: 'AI Label Tool', url });
+                    }
+                } catch {
+                    shareBtnText.textContent = 'Copied! ✓';
+                    setTimeout(() => { shareBtnText.textContent = 'Share tool'; }, 2200);
+                }
+            });
+        }
 
         processBtn.addEventListener('click', processFile);
 
