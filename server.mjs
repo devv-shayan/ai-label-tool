@@ -7,8 +7,8 @@ import { fileURLToPath } from "node:url";
 const appDirectory = resolve(fileURLToPath(new URL(".", import.meta.url)));
 const publicDirectory = join(appDirectory, "public");
 const port = Number(process.env.PORT || 8787);
-// The tool page is a self-contained document and may use inline styles and scripts.
-const selfContainedPages = new Set(["index.html"]);
+// The tool and blog pages are self-contained documents and may use inline styles and scripts.
+const selfContainedPages = new Set(["index.html", "blog.html"]);
 
 const contentTypes = {
   ".css": "text/css; charset=utf-8",

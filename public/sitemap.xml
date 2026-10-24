@@ -7,6 +7,12 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://devv-shayan.github.io/ai-label-tool/blog.html</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://devv-shayan.github.io/ai-label-tool/privacy.html</loc>
     <lastmod>2026-10-24</lastmod>
     <changefreq>yearly</changefreq>
