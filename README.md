@@ -20,14 +20,6 @@ The site is deployed from `public/` by the GitHub Actions workflow in `.github/w
 
 To make Google discover the page, verify the URL-prefix property in [Google Search Console](https://search.google.com/search-console/) and submit `https://devv-shayan.github.io/ai-label-tool/sitemap.xml`. Search Console verification is the one step that needs the site owner's account.
 
-## SEO skills used
-
-The project-scoped skills are installed in `.agents/skills` and recorded in `skills-lock.json`:
-
-- `seo` from [addyosmani/web-quality-skills](https://github.com/addyosmani/web-quality-skills)
-- `seo-audit`, `schema`, and `ai-seo` from [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills)
-- `seo-aeo-best-practices` from [sanity-io/agent-toolkit](https://github.com/sanity-io/agent-toolkit)
-
 ## Run it
 
 1. Open Terminal in this folder.
